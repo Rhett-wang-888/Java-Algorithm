@@ -20,6 +20,7 @@ public class BSTIterator {
         return arr.get(idx++);
     }
 
+
     public boolean hasNext(){
         return idx <arr.size();
     }
