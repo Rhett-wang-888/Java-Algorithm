@@ -15,7 +15,6 @@ public class BSTIterator {
         idx=0;
         arr= new ArrayList<Integer>();
         inorderTraversal(root,arr);
-
     }
     public int next(){
         return arr.get(idx++);
