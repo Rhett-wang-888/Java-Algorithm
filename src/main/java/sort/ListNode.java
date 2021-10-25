@@ -12,4 +12,8 @@ public class ListNode {
     public ListNode(Integer data){
         this.data=data;
     }
+    public ListNode(Integer data,ListNode head){
+        this.data=data;
+        this.next=head;
+    }
 }
