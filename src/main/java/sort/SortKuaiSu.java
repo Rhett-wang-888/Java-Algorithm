@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.List;
+
 /**
  * @author Rhett
  * @title: SortKuaiSu
@@ -109,5 +111,40 @@ public class SortKuaiSu {
         }
 
         return resHead;
+    }
+
+    public ListNode mergeListSorts(ListNode l1,ListNode l2){
+        if(l1 ==null)
+            return l2;
+        if (l2==null)
+            return l1;
+
+        if(l1.data<l2.data){
+            l1.next=mergeListSorts(l1.next,l2);
+            return l1;
+        }else{
+            l2.next=mergeListSorts(l1,l2.next);
+            return l2;
+        }
+
+    }
+
+    public ListNode mergeListSorts1(ListNode l1,ListNode l2){
+        ListNode prehead = new ListNode(0);
+
+        ListNode head=prehead;
+
+        while(l1 !=null && l2 !=null){
+            if(l1.data<=l2.data){
+                head.next=l1;
+                l1=l1.next;
+            }else{
+                head.next=l2;
+                l2=l2.next;
+            }
+            head=head.next;
+        }
+        head.next=l1==null?l2:l1;
+        return prehead.next;
     }
 }
