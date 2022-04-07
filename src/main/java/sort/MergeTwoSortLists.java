@@ -152,7 +152,6 @@ public class MergeTwoSortLists {
             }
             p=p.next;
         }
-
         while(l1 !=null){
             p.next=l1;
             l1=l1.next;
